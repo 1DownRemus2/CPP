@@ -3,33 +3,30 @@ using namespace std;
 
 void maxmin(int arr[5])
 {
+    int maxVal = arr[0];
+    int minVal = arr[0];
+    int maxIndex = 0, minIndex = 0;
 
-    int max = 0, min = 0, i, j;
-
-    for (i = 0; i < 5; i++)
-    {
-
-        if (max < arr[i])
-        {
-            max = arr[i];
+    for (int i = 1; i < 5; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+            maxIndex = i;
+        }
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+            minIndex = i;
         }
     }
-    for (j = 0; j < 5; j++)
-    {
-        if (min > arr[j])
-        {
-            min = arr[j];
-        }
-    }
-    cout << "The maximum number in the array is: " << max << " and the index is: " << i << endl;
-    cout << "The minimum number in the array is: " << min << " and the index is: " << j << endl;
+
+    cout << "The maximum number in the array is: " 
+         << maxVal << " and the index is: " << maxIndex << endl;
+    cout << "The minimum number in the array is: " 
+         << minVal << " and the index is: " << minIndex << endl;
 }
 
 int main()
 {
-    int arr[5] = {1, 2, 3, 4, 5};
-
+    int arr[5] = {5,3,4,2,4};
     maxmin(arr);
-
     return 0;
 }
